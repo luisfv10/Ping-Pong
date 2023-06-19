@@ -47,7 +47,7 @@
         w: line.w,
         h: 200,
         _move: function () {
-          this.y = mouse.y
+          this.y = mouse.y - this.h / 2
         },
         draw: function () {
           canvasCtx.fillStyle = "#ffffff"
@@ -138,7 +138,6 @@
       canvasEl.addEventListener("mosemove", function (e) {
         mouse.x = e.pageX
         mouse.y = e.pageY
-        console.log(mouse)
       })
     </script>
   </body>
