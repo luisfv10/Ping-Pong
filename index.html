@@ -62,9 +62,14 @@
         y: 100,
         w: line.w,
         h: 200,
+        _move: function () {
+          this.y = ball.y
+        },
         draw: function () {
           canvasCtx.fillStyle = "#ffffff"
           canvasCtx.fillRect(this.x, this.y, this.w, 200)
+
+          this._move()
         },
       }
 
@@ -135,7 +140,7 @@
       setup()
       main()
 
-      canvasEl.addEventListener("mosemove", function (e) {
+      canvasEl.addEventListener("mousemove", function (e) {
         mouse.x = e.pageX
         mouse.y = e.pageY
       })
